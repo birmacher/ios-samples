@@ -29,5 +29,11 @@
 	<string>AirLocate</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Using Core Location for iBeacons</string>
+	<key>CFBundleName</key>
+	<string>AirLocate</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<key>CFBundleVersion</key>
+	<string>1.0.0</string>
 </dict>
 </plist>

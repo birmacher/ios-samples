@@ -1,5 +1,6 @@
-AirLocate
+AirLocate [![Build Status](https://www.bitrise.io/app/dc3d6f1212eb5a42.svg?token=wSSwPaTGHjxaI_D7DtcBJw)](https://www.bitrise.io/app/dc3d6f1212eb5a42)
 ================
+
 AirLocate shows how to use `CLLocationManager` to monitor and range `CLBeaconRegion`.
 The code also provides an example of how you can calibrate and configure an iOS device as a beacon with CoreBluetooth.
 
@@ -35,7 +36,7 @@ To demo monitoring, select Monitoring from the remote device. `MonitoringViewCon
 
 This sample is the Xamarin.iOS version of Apple's iOS7 Sample -- AirLocate.
 
-Here is the link to the Apple's Sample: 
+Here is the link to the Apple's Sample:
 https://developer.apple.com/downloads/index.action?name=WWDC%202013#
 
 
