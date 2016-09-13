@@ -1,4 +1,4 @@
-AirLocate
+AirLocate [![Build Status](https://www.bitrise.io/app/dc3d6f1212eb5a42.svg?token=wSSwPaTGHjxaI_D7DtcBJw)](https://www.bitrise.io/app/dc3d6f1212eb5a42)
 ================
 
 AirLocate shows how to use `CLLocationManager` to monitor and range `CLBeaconRegion`.
