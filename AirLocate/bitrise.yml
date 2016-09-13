@@ -1,0 +1,42 @@
+---
+format_version: 1.2.0
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+trigger_map:
+- pattern: "*"
+  is_pull_request_allowed: true
+  workflow: primary
+workflows:
+  primary:
+    steps:
+    - activate-ssh-key@3.1.1:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - git-clone@3.3.4: {}
+    - certificate-and-profile-installer@1.6.0: {}
+    - xamarin-user-management@1.0.2:
+        run_if: ".IsCI"
+        inputs:
+        - xamarin_ios_license: 'yes'
+        - xamarin_android_license: 'no'
+    - nuget-restore:
+        inputs:
+        - nuget_version: latest
+    - set-xcode-build-number:
+        inputs:
+        - plist_path: $INFO_PLIST_PATH
+    - xamarin-builder@1.4.0:
+        inputs:
+        - platform_filter: ios
+app:
+  envs:
+  - BITRISE_PROJECT_PATH: AirLocate.sln
+    opts:
+      is_expand: false
+  - BITRISE_XAMARIN_CONFIGURATION: Release
+    opts:
+      is_expand: false
+  - BITRISE_XAMARIN_PLATFORM: iPhone
+    opts:
+      is_expand: false
+  - INFO_PLIST_PATH: "AirLocate/Info.plist"
+    opts:
+      is_expand: true
