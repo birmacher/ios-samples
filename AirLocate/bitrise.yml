@@ -8,9 +8,6 @@ trigger_map:
 workflows:
   primary:
     steps:
-    - activate-ssh-key@3.1.1:
-        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
-    - git-clone@3.3.4: {}
     - certificate-and-profile-installer@1.6.0: {}
     - xamarin-user-management@1.0.2:
         run_if: ".IsCI"
